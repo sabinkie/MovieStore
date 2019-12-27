@@ -29,15 +29,10 @@ componentDidMount() {
 
 render() {
     return (
-        <div>
-            <img src={this.state.photo} alt="image"/>
-            
-            <p>
-            {this.state.name}
-            </p>
-            <p>   
-            {this.state.text}
-            </p>
+        <div id="header_wrapper" style={{backgroundImage: `url(${this.state.photo})`, width: "100vw", height: "100vh"}}>
+            {/*<img src={this.state.photo} alt="image"/>*/}
+            <p id="title">{this.state.name}</p>
+            <p id="description">{this.state.text}</p>
         </div>
         )
     }
