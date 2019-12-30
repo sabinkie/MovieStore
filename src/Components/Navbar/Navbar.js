@@ -14,6 +14,7 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav id='navbar'>
+                <img className='image' src={require('./icon.png')} />
                 <ul>
                     <li className='navItem'><a href='index.html'>Home</a></li>
                     <li className='navItem'><a href='#'>What's new</a></li>
