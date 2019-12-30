@@ -11,16 +11,18 @@ class Header extends React.Component {
 
     componentDidMount() {
         axios.get('https://api.themoviedb.org/3/movie/popular?api_key=68d7264858afc32ecd7aaaf941bb14b7&language=en-US')
-            .then(res => {
-                let randomNumber =   Math.floor(Math.random() * (19 - 0)) + 0; 
-                const data = res.data;
-                this.setState({
-                    movieTitle: data.results[randomNumber].title,
-                    movieDescription: data.results[randomNumber].overview,
-                    photo: "https://image.tmdb.org/t/p/w1280" + data.results[randomNumber].backdrop_path
-                });
-            }   
-        )
+        .then(res => {
+            let randomNumber =   Math.floor(Math.random() * (19 - 0)) + 0; 
+            const data = res.data;
+            this.setState({
+                movieTitle: data.results[randomNumber].title,
+                movieDescription: data.results[randomNumber].overview,
+                photo: "https://image.tmdb.org/t/p/w1280" + data.results[randomNumber].backdrop_path
+            });
+        })
+        .catch((error)=>{
+            console.log(error);
+        });
     }
 
     render() {
