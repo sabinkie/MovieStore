@@ -5,8 +5,10 @@ import './Components/Navbar/navbar.scss'
 import Header from './Components/Header/Header'
 function App() {
   return (
-    <Navbar />
-    <Header />
+    <div>
+      <Navbar />
+      <Header />
+    </div>
   );
 }
 
