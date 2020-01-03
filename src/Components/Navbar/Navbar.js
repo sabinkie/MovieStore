@@ -4,11 +4,10 @@ import axios from 'axios';
 class Navbar extends React.Component {
 
     onClickNav = () => {
-        console.log('Works');
-        const movie_id = 5;
-        axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=ad840cde5d9cba2a015a161594f2e2ae&language=en-US`,
+        const movieId = 5;
+        axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=ad840cde5d9cba2a015a161594f2e2ae&language=en-US`,
             { Authentication: 'api_key=ad840cde5d9cba2a015a161594f2e2ae' },
-            { Parameters: `movie_id=${movie_id}` })
+            { Parameters: `movieId=${movieId}` })
     }
 
     render() {
