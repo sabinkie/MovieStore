@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 class Navbar extends React.Component {
-    state = { term: '' }
+    state = {
+        term: '',
+        movies: [],
+        hideComponent: false
+    }
 
-    onInputChange = () => {
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ad840cde5d9cba2a015a161594f2e2ae&query=${this.state.term}`,
+    onInputChange = async () => {
+        const res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ad840cde5d9cba2a015a161594f2e2ae&query=${this.state.term}`,
             { Authentication: 'api_key=ad840cde5d9cba2a015a161594f2e2ae' })
+
+        this.setState({ movies: res.data.results })
+        this.setState({ hideComponent: true });
     }
 
     // onClickNav = () => {
@@ -33,7 +40,9 @@ class Navbar extends React.Component {
                     </li>
 
                 </ul>
+
             </nav>
+
         )
     }
 }
