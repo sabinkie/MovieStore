@@ -5,22 +5,18 @@ import axios from 'axios';
 class Navbar extends React.Component {
     state = {
         term: '',
-        movies: [],
-        hideComponent: false
+        movies: []
     }
 
     onInputChange = async () => {
         const res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ad840cde5d9cba2a015a161594f2e2ae&query=${this.state.term}`,
             { Authentication: 'api_key=ad840cde5d9cba2a015a161594f2e2ae' })
+        console.log(res.data.results.original_title);
 
         this.setState({ movies: res.data.results })
-        this.setState({ hideComponent: true });
     }
 
-    // onClickNav = () => {
-    //     axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=ad840cde5d9cba2a015a161594f2e2ae&language=en-US`,
-    //         { Authentication: 'api_key=ad840cde5d9cba2a015a161594f2e2ae' })
-    // }
+
 
 
     render() {
