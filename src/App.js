@@ -39,10 +39,10 @@ class App extends React.Component {
               <Link to='/'>Home</Link>
             </li>
             <li className='navItem'>
-              <Link to='/'>Movies</Link>
+              <Link to='/movies'>Movies</Link>
             </li>
             <li className='navItem'>
-              <Link to='/'>TV Series</Link>
+              <Link to='/tvseries'>TV Series</Link>
             </li>
             <li className='navItem'><a onClick={this.onInputChange} href='#'>Search by title: </a>
               <input type='text' value={this.state.term} onChange={(e) => {
@@ -52,9 +52,9 @@ class App extends React.Component {
             </li>
           </ul>
 
-          <Route exect path='/' component={Home} />;
+          <Route exact path='/' component={Home} />;
           <Route path='/movies' component={Movies} />;
-          <Route path='/TVseries' component={TVseries} />;
+          <Route path='/tvseries' component={TVseries} />;
 
         </nav>
       </Router>

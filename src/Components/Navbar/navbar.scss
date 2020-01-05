@@ -6,6 +6,11 @@
     font-family: 'Poppins', sans-serif;
     margin: 0 10px 0 10px;
   }
+
+  ul {
+    margin: 0;
+  }
+
   li a:hover {
     opacity: 1;
     color: darkred;
@@ -28,7 +33,7 @@
     height: 50px;
     width: 50px;
     position: absolute;
-    top: 20px;
+    top: 3px;
     left: 10px;
   }
   
